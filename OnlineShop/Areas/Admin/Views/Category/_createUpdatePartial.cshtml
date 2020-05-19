@@ -1,0 +1,41 @@
+﻿<div class="modal" id="modalAddUpdate" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><b>Add/Update category</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="txtName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtName" placeholder="name">
+                            <input type="hidden" id="hidID" value="0" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtMetaTitle" class="col-sm-2 col-form-label">MetaTitle</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtMetaTitle" placeholder="metatitle">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ckStatus" class="col-sm-2 col-form-label">Status</label>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="ckStatus">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSave" onclick="saveData()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
