@@ -1289,6 +1289,7 @@
     <Content Include="assets\admin\js\plugins\ckfinder\_samples\skin_v1.html" />
     <Content Include="assets\admin\js\plugins\ckfinder\_samples\standalone.html" />
     <Content Include="assets\admin\js\plugins\ckfinder\_samples\standalone_v1.html" />
+    <Content Include="assets\admin\js\plugins\jquery.twbsPagination.min.js" />
     <Content Include="assets\admin\js\sb-admin-2.js" />
     <Content Include="assets\admin\vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="assets\admin\vendor\bootstrap\css\bootstrap.css" />

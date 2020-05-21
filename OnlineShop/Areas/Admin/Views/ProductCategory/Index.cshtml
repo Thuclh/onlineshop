@@ -8,6 +8,7 @@
     Danh mục sản phẩm.
 }
 @section jsFooter{
+    <script src="~/assets/admin/js/plugins/jquery.twbsPagination.min.js"></script>
     <script src="~/assets/admin/js/controller/productCategoryController.js"></script>
 }
 <div class="row">
@@ -24,7 +25,7 @@
                         </div>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-success">Tìm kiếm</button>
-                            <button type="submit" id="btnAddNew" class="btn btn-primary">Thêm mới</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddUpdate" onclick="resetForm()">Thêm mới</button>
                         </div>
                     </div>
                 </div>
@@ -32,38 +33,20 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Tên danh mục</th>
-                                <th>Tiêu đề</th>
-                                <th>Trạng thái</th>
-                                <th>Chức năng</th>
+                                <td><b>Tên danh mục</b></td>
+                                <td><b>Tiêu đề</b></td>
+                                <td><b>Người tạo</b></td>
+                                <td><b>Trạng thái</b></td>
+                                <td><b>Chức năng</b></td>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>@item.Name</td>
-                                    <td>@item.MetaTitle</td>
-                                    <td>@item.Status</td>
-                                    <td>
-                                        <a href="/Admin/ProductCategory/Edit/@item.ID">Sửa</a>
-                                        |
-                                        <a href="#">Xóa</a>
-                                        @*@Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
-                                            {
-                                                Confirm = "Bạn chắc chắn muốn xóa bản ghi này?",
-                                                OnComplete = "$('#row_" + @item.ID + "').remove()",
-                                                HttpMethod = "Delete"
-                                            })*@
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
+                        <tbody id="tbl-productcategory"></tbody>
                     </table>
+                    <div id="pagination" class="pagination">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @RenderPage("_createUpdateProductCategory.cshtml")
-

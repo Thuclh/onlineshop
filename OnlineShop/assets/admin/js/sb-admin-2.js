@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     $('#side-menu').metisMenu();
 
     $("#AlertBox").removeClass("hide");
