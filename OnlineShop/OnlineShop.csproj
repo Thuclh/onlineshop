@@ -211,14 +211,18 @@
     <Compile Include="Commons\Encryptor.cs" />
     <Compile Include="Commons\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +233,7 @@
     <Content Include="assets\admin\dist\js\sb-admin-2.js" />
     <Content Include="assets\admin\dist\js\sb-admin-2.min.js" />
     <Content Include="assets\admin\js\controller\categoryController.js" />
+    <Content Include="assets\admin\js\controller\contentController.js" />
     <Content Include="assets\admin\js\controller\productCategoryController.js" />
     <Content Include="assets\admin\js\controller\userController.js" />
     <Content Include="assets\admin\js\jquery.validate.unobtrusive.min.js" />
@@ -1380,8 +1385,15 @@
     <Content Include="assets\admin\vendor\morrisjs\morris.min.js" />
     <Content Include="assets\admin\vendor\raphael\raphael.js" />
     <Content Include="assets\admin\vendor\raphael\raphael.min.js" />
+    <Content Include="assets\client\css\boostrap-social.css" />
+    <Content Include="assets\client\css\bootstrap-theme.css" />
+    <Content Include="assets\client\css\bootstrap-theme.min.css" />
+    <Content Include="assets\client\css\bootstrap.css" />
+    <Content Include="assets\client\css\bootstrap.min.css" />
     <Content Include="assets\client\css\easy-responsive-tabs.css" />
+    <Content Include="assets\client\css\font-awesome.min.css" />
     <Content Include="assets\client\css\global.css" />
+    <Content Include="assets\client\css\jquery-ui.css" />
     <Content Include="assets\client\css\slider.css" />
     <Content Include="assets\client\css\style.css" />
     <Content Include="assets\client\images\about_img.jpg" />
@@ -1434,9 +1446,13 @@
     <Content Include="assets\client\images\twitter.png" />
     <Content Include="assets\client\images\value-rating.png" />
     <Content Include="assets\client\images\wishlist.png" />
+    <Content Include="assets\client\js\bootstrap.min.js" />
+    <Content Include="assets\client\js\controller\cartController.js" />
     <Content Include="assets\client\js\easing.js" />
     <Content Include="assets\client\js\easyResponsiveTabs.js" />
+    <Content Include="assets\client\js\jquery-1.11.3.min.js" />
     <Content Include="assets\client\js\jquery-1.7.2.min.js" />
+    <Content Include="assets\client\js\jquery-ui.js" />
     <Content Include="assets\client\js\jquery.accordion.js" />
     <Content Include="assets\client\js\jquery.easing.js" />
     <Content Include="assets\client\js\move-top.js" />
@@ -1545,6 +1561,10 @@
     <Content Include="Areas\Admin\Views\Shared\_createPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Category\_createUpdatePartial.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\_createUpdateProductCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Content\Edit.cshtml" />
+    <Content Include="assets\client\css\bootstrap-theme.css.map" />
+    <Content Include="assets\client\css\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1583,12 +1603,15 @@
     <Content Include="Views\Feedbacks\Details.cshtml" />
     <Content Include="Views\Feedbacks\Edit.cshtml" />
     <Content Include="Views\Feedbacks\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\HeaderCart.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

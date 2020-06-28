@@ -41,6 +41,7 @@ namespace Model.Dao
             product.Image = entity.Image;
             product.Detail = entity.Detail;
             product.Status = entity.Status;
+            product.CategoryId = entity.CategoryId;
             db.SaveChanges();
             return true;
         }
