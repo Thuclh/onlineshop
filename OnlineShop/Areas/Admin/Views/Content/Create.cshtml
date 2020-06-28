@@ -23,58 +23,65 @@
         });
     </script>
 }
-<div class="container" style="width: 100%">
+    <div class="container" style="width: 100%">
 
-    @using (Html.BeginForm("Create", "Content", FormMethod.Post))
-    {
-        <div class="form-group row">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "name" })
+        @using (Html.BeginForm("Create", "Content", FormMethod.Post))
+        {
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "name" })
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control", @placeholder = "metaTitle" })
+            <div class="form-group row">
+                @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control", @placeholder = "metaTitle" })
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            @Html.LabelFor(model => model.MetaDescriptions, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.MetaDescriptions, new { @class = "form-control", @placeholder = "metaDescriptions" })
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control", @placeholder = "descriptions" })
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Image, new { @class = "form-control", @id = "txtImage", @placeholder = "image" })
-                @*<a id="btnSelectImage" href="#">Chọn ảnh</a>*@
-                <button class="btn btn-success" id="btnSelectImage">Chọn ảnh</button>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Image, new { @class = "form-control", @id = "txtImage", @placeholder = "image" })
+                    @*<a id="btnSelectImage" href="#">Chọn ảnh</a>*@
+                    <button class="btn btn-success" id="btnSelectImage">Chọn ảnh</button>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            @Html.LabelFor(model=>model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model=>model.CategoryId, null, new { @class="form-control"})
+            <div class="form-group row">
+                @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.CategoryId, null, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @id="txtContent", @placeholder = "detail" })
+            <div class="form-group row">
+                @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.CreatedBy, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(model => model.Status)
+
+            @*<div class="form-group row">
+                @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @id="txtContent", @placeholder = "detail" })
+                </div>
+            </div>*@
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.Status)
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Tạo mới" class="btn btn-primary" />
+            <div class="form-group row">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Tạo mới" class="btn btn-primary" />
+                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>

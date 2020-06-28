@@ -30,6 +30,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                SetViewBag();
                 var dao = new ProductDao();
                 var prod = dao.Insert(product);
                 if (prod > 0)
@@ -41,23 +42,23 @@ namespace OnlineShop.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Thêm mới không thành công.");
                 }
             }
-            SetViewBag();
+            
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var dao = new ProductDao().GetById(id);
             SetViewBag();
+            var dao = new ProductDao().GetById(id);
             return View(dao);
         }
 
         [HttpPost]
         public ActionResult Edit(Product product)
         {
-            var model = new ProductDao().Update(product);
             SetViewBag();
+            var model = new ProductDao().Update(product);
             return RedirectToAction("Index");
         }
 

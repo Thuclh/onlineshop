@@ -10,9 +10,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>Online Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/assets/client/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/client/css/boostrap-social.css" rel="stylesheet" />
+    <link href="~/assets/client/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/client/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/assets/client/css/jquery-ui.css" rel="stylesheet" />
     <link href="/assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/assets/client/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+
+
     <script type="text/javascript" src="/assets/client/js/jquery-1.7.2.min.js"></script>
+    <script src="~/assets/client/js/jquery-1.11.3.min.js"></script>
+    <script src="~/assets/client/js/jquery-ui.js"></script>
+    <script src="~/assets/client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/client/js/move-top.js"></script>
     <script type="text/javascript" src="/assets/client/js/easing.js"></script>
     <script type="text/javascript" src="/assets/client/js/startstop-slider.js"></script>
@@ -25,18 +35,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="header_top">
                 <div class="logo">
-                    <a href="/"><img src="/assets/client/images/logo.png" alt="" /></a>
+                    <a href="/" rel="nofollow"><img src="/assets/client/images/logo.png" alt="" /></a>
                 </div>
-                <div class="cart">
-                    <p>
-                        Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
-                            0 item(s) - $0.00
-                            <ul class="dropdown">
-                                <li>you have no items in your Shopping cart</li>
-                            </ul>
-                        </div>
-                    </p>
-                </div>
+                @{ Html.RenderAction("HeaderCart", "Home");}
                 <script type="text/javascript">
                     function DropDown(el) {
                         this.dd = el;
@@ -68,7 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="clear"></div>
             </div>
             <div class="header_bottom">
-                @{ Html.RenderAction("MainMenu", "Home");}
+                @{Html.RenderAction("MainMenu", "Home");}
                 <div class="search_box">
                     <form>
                         <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
@@ -92,5 +93,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
     </script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>

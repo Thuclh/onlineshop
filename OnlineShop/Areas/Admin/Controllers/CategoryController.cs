@@ -6,7 +6,7 @@ using System.Web.Script.Serialization;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
         private OnlineShopDbContext _context;
 

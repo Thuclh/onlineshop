@@ -102,7 +102,7 @@ function deleteCategory(id) {
             success: function (response) {
                 if (response.status == true) {
                     alert("Delete success", function () {
-                        categoryController.loadData();
+                        loadData();
                     });
                     loadData();
                 }

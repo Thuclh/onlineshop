@@ -1,9 +1,5 @@
 ﻿using Model.Dao;
 using Model.EF;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OnlineShop.Areas.Admin.Controllers
@@ -31,7 +27,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                
+
                 long user = dao.Inser(entity);
                 if (user > 0)
                 {
@@ -40,7 +36,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("","Thêm người dùng không thành công.");
+                    ModelState.AddModelError("", "Thêm người dùng không thành công.");
                 }
             }
             return RedirectToAction("Index");
@@ -50,7 +46,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var dao = new UserDao().GetById(id);
-            
+
             return View(dao);
         }
 
